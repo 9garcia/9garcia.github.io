@@ -10,11 +10,25 @@ body {
 	background: #FBF1C7;
 	border-width: 4px;
 	border-style: solid;
-	width: 50%;
-	height: 50%;
+	width: 50vw;
+	height: 50vw;
 	top: 50%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+	.home {
+		width: 80vw; /* Adjust the width as per your requirement */
+		height: 100vh; /* Stretches the square vertically to fill the entire viewport height */
+		transform: none; /* Resets the translation */
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto; /* Centers the square vertically and horizontally */
+	}
 }
 
