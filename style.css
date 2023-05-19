@@ -10,10 +10,11 @@ body {
 	background: #FBF1C7;
 	border-width: 4px;
 	border-style: solid;
-	width: 50vw;
-	height: 50vw;
+	width: 50%;
+	height: 50%;
 	top: 50%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
 }
+
