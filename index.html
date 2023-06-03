@@ -1,26 +1,315 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>home</title>
-    <style>* 
-       html, body {
-  	margin: 0;
-  	padding: 0;
-       }
-      .rio {
-  	position: absolute;
-  	top: 50%;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
-  	width: 100vmin; /* 100% of the viewport width */
-  	height: 100vmin; /* 100% of the viewport width */
-  	background-color: red; /* Change the color as needed */
-      }
+<!doctype html>
+<html lang="en-us">
+<head>
+    <style>
+    html {
+        margin-right:0 !important
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        border: none;
+        font-family: 'Roboto Mono';
+        font-size: 14px;
+        color: #363636;
+        background: #fff;
+        letter-spacing: 0;
+        font-weight:400
+    }
+
+    body .section, body footer, body header {
+        opacity: 0;
+        visibility:hidden
+    }
+
+    body.loaded .section, body.loaded footer, body.loaded header {
+        opacity: 1;
+        visibility: visible;
+        transition-property: opacity;
+        transition-duration:.6s
+    }
+
+    * {
+        box-sizing: border-box;
+        -webkit-box-sizing:border-box
+    }
+
+    .clear {
+        clear:both
+    }
+
+    .container {
+        position: relative;
+        margin: 30px;
+        overflow: hidden;
+        background:#fff
+    }
+
+    @media (max-width: 840px) {
+        .container {
+            margin:15px
+        }
+    }
+
+    .container .line {
+        content: '';
+        position: fixed;
+        background: #ff4081;
+        z-index:105
+    }
+
+    .container .line.top {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height:30px
+    }
+
+    @media (max-width: 840px) {
+        .container .line.top {
+            height:15px
+        }
+    }
+
+    .container .line.bottom {
+        left: 0;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height:30px
+    }
+
+    @media (max-width: 840px) {
+        .container .line.bottom {
+            height:15px
+        }
+    }
+
+    .container .line.left {
+        left: 0;
+        top: 0;
+        width: 30px;
+        height:200%
+    }
+
+    @media (max-width: 840px) {
+        .container .line.left {
+            width:15px
+        }
+    }
+
+    .container .line.right {
+        left: auto;
+        right: 0;
+        top: 0;
+        width: 30px;
+        height:200%
+    }
+
+    @media (max-width: 840px) {
+        .container .line.right {
+            width:15px
+        }
+    }
+
+    .wrapper {
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        max-width:1060px
+    }
+
+
     </style>
-  </head>
-  <body>
-    <div class="rio">
+
+</head>
+<body>
+    <div id="confetti"></div>
+    <div class="container fixed">
+
+        <header>
+            <div class="head-top">
+                <a href="#" class="menu-btn">
+                    <span></span>
+                </a>
+                <div class="top-menu">
+
+                    <ul>
+                        <li class="active">
+                            <a class="lnk" href="/">Home</a>
+                        </li>
+                        <li class="">
+                            <a class="lnk" href="/about/">About</a>
+                        </li>
+                        <li class="">
+                            <a class="lnk" href="/blog/">Blog</a>
+                        </li>
+                        <li class="">
+                            <a class="lnk" href="/work/">Work</a>
+                        </li>
+                        <li>
+                            <a href="#popup-subscribe" class="btn fill has-popup">Subscribe</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </header>
+        <div class="wrapper">
+            <div id="section-started" class="section started">
+                <div class="centrize full-width">
+                    <div class="vertical-center">
+                        <div class="started-content">
+                            <div class="h-title glitch-effect" data-text="I'm Josh">
+
+                                  I'm 
+                                <span>Josh</span>
+                            </div>
+                            <div class="h-subtitle typing-subtitle">
+                                <p>Developer advocate</p>
+                                <p>Software engineer</p>
+                                <p>Yoga practicer</p>
+                                <p>American in Paris</p>
+                                <p>... ... ...</p>
+                            </div>
+                            <span class="typed-subtitle"></span>
+                        </div>
+                        <div style="margin-left: 20%; width: 60%; margin-top: 15%; border: 1px dashed #FF4081; padding: 20px 25px; text-align: left; font-family: Roboto">
+                            <h6 style="margin-bottom: 10px">Don't miss...</h6>
+                            <ul>
+
+                                <li>
+                                    &rsaquo; 
+                                    <a href="https://orbit.love/">Working in community? Check out Orbit!</a>
+                                </li>
+
+                                <li>
+                                    &rsaquo; 
+                                    <a href="https://www.coss.community/coss/ocs-2020-breakout-josh-dzielak-5d6i">Talk: The secret to building things developers love</a>
+                                </li>
+
+                                <li>
+                                    &rsaquo; 
+                                    <a href="https://devrel.net/strategy-and-metrics/communities-arent-funnels">Talk: Communities aren&#39;t funnels, try the Orbit Model instead</a>
+                                </li>
+
+                                <li>
+                                    &rsaquo; 
+                                    <a href="/work">My talks, articles and open source projects</a>
+                                </li>
+
+                                <li>
+                                    &rsaquo; 
+                                    <a href="/blog">Latest blog posts</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <span></span>
+            </div>
+        </div>
+        <footer>
+            <div class="soc">
+                <a target="_blank" href="https://twitter.com/dzello">
+                    <span class="ion ion-social-twitter"></span>
+                </a>
+                <a target="_blank" href="https://github.com/dzello">
+                    <span class="ion ion-social-github"></span>
+                </a>
+                <a target="_blank" href="https://linkedin.com/in/dzello">
+                    <span class="ion ion-social-linkedin-outline"></span>
+                </a>
+                <a target="_blank" href="https://instagram.com/josh_people">
+                    <span class="ion ion-social-instagram-outline"></span>
+                </a>
+                <a target="_blank" href="mailto:josh@dzello.com">
+                    <span class="ion ion-email"></span>
+                </a>
+            </div>
+            <div class="copy">
+                © JOSH DZIELAK 2021 &middot;
+                    
+                <a href="/">HOME</a>
+                 &middot;
+                    
+                <a href="/api">API</a>
+                 &middot;
+                    
+                <a target="_blank" href="https://dzello.com/index.xml">RSS</a>
+                 &middot;
+                    
+                <a href="/search">SEARCH</a>
+                 &middot;
+                    
+                <a href="#click-if-you-like-to-party" onclick="window._confetti(); return false;">🎉</a>
+            </div>
+            <div class="clr"></div>
+        </footer>
+
+        <div class="line top"></div>
+        <div class="line bottom"></div>
+        <div class="line left"></div>
+        <div class="line right"></div>
     </div>
-  </body>
+    <div id="popup-subscribe" class="popup-box mfp-fade mfp-hide">
+        <div class="content">
+            <div class="desc">
+                <h2>$ POST /subscribe</h2>
+                <p>
+                    Please visit 
+                    <a href="https://orbit.love/">orbit.love</a>
+                     to subscribe to articles about developer relations, marketing, and community.
+                          
+                </p>
+                <p>
+                    You can subscribe to this blog directly via the 
+                    <a href="/index.xml">RSS feed</a>
+                    .
+                          
+                </p>
+                <p>
+                        Thanks! 🙏
+                      </p>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    (function() {
+        var elem = document.getElementById("section-started");
+        if (elem) {
+            var width = document.documentElement.clientWidth;
+            var height = document.documentElement.clientHeight;
+            if (width < 840) {
+                elem.style.height = (height - 30) + "px";
+            } else {
+                elem.style.height = (height - 60) + "px";
+            }
+        }
+        document.body.className = "loaded";
+    })();
+    </script>
+    <script>
+    setTimeout(function() {
+        var myCSS = document.createElement("link");
+        myCSS.rel = "stylesheet";
+        myCSS.href = "/css/vendor.css";
+        document.body.appendChild(myCSS);
+    }, 1);
+    </script>
+    <script defer src="/app.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24132749-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', "UA-24132749-1");
+    </script>
+</body>
 </html>
+
